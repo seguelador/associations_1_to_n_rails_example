@@ -15,6 +15,7 @@ class PetsController < ApplicationController
   # GET /pets/new
   def new
     @pet = Pet.new
+    @users = User.all.map{ |user| [user.name, user.id]}
   end
 
   # GET /pets/1/edit
@@ -69,6 +70,6 @@ class PetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pet_params
-      params.require(:pet).permit(:name, :age)
+      params.require(:pet).permit(:name, :age, :user_id)
     end
 end

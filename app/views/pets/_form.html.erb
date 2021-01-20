@@ -21,6 +21,19 @@
     <%= form.number_field :age %>
   </div>
 
+  <%# <div class="field"> %>
+  <%#   <select name="pet[user_id]"> %>
+  <%#     <% @users.each do |user| %1> %>
+  <%#       <option value="<%= user.id %1>"><%= user.name %1></option> %>
+  <%#     <% end %1> %>
+  <%#   </select> %>
+  <%# </div> %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.select(:user_id, options_for_select(@users)) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

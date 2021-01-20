@@ -18,5 +18,11 @@ module Associations1
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    #
+    if Rails::VERSION::MAJOR >= 6
+      Rails.application.class.module_parent.name
+    else
+      Rails.application.class.parent.name
+    end
   end
 end
